@@ -17,7 +17,7 @@ import Genres from "../genres/Genres";
 
 import "./style.scss";
 
-function Carousel({ data, loading, endPoint }) {
+function Carousel({ data, loading, endPoint, title }) {
   const cararouselContainer = useRef();
 
   const { url } = useSelector((state) => state.home);
@@ -50,6 +50,9 @@ function Carousel({ data, loading, endPoint }) {
   return (
     <div className="carousel">
       <ContentWrapper>
+        {title && <div className="carouselTitle">
+                    {title}
+                  </div>}
         <BsFillArrowLeftCircleFill
           className="carouselLeftNav arrow"
           onClick={() => navigation("left")}
